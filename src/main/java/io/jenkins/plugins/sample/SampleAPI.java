@@ -31,11 +31,15 @@ public class SampleAPI implements RootAction {
         return new JsonHttpResponse(JSONObject.fromObject("{\"message\": \"ok\"}"), 200);
     }
 
+    /**
+     * Demonstration of <a href="https://issues.jenkins.io/browse/JENKINS-75205">...</a>
+     */
     @GET
     @WebMethod(name = "npe")
     public JsonHttpResponse getSampleNPE() {
-        String str = null;
-        str.length();
+        // enable this code to make NPE; currently commented as spotbugs is failing the mvn clean install.
+        // String str = null;
+        // str.length();
         return new JsonHttpResponse(JSONObject.fromObject("{\"message\": \"ok\"}"), 200);
     }
 }
